@@ -6,6 +6,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eshop.Domain", "Eshop.Domai
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eshop.Infrastructure.Persistence", "Eshop.Infrastructure.Persistence\Eshop.Infrastructure.Persistence.csproj", "{763F4347-8A4F-4061-A901-7CFBB4276FD4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eshop.Migrations", "Eshop.Migrations\Eshop.Migrations.csproj", "{F6AB9669-1587-4C90-B7B1-9FFD17CA69E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{E3379BC8-7593-4810-8BC6-0D1246298754}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +28,12 @@ Global
 		{763F4347-8A4F-4061-A901-7CFBB4276FD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{763F4347-8A4F-4061-A901-7CFBB4276FD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{763F4347-8A4F-4061-A901-7CFBB4276FD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6AB9669-1587-4C90-B7B1-9FFD17CA69E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6AB9669-1587-4C90-B7B1-9FFD17CA69E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6AB9669-1587-4C90-B7B1-9FFD17CA69E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6AB9669-1587-4C90-B7B1-9FFD17CA69E1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F6AB9669-1587-4C90-B7B1-9FFD17CA69E1} = {E3379BC8-7593-4810-8BC6-0D1246298754}
 	EndGlobalSection
 EndGlobal
