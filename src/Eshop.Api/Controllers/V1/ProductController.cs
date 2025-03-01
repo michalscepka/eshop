@@ -1,6 +1,6 @@
 using Asp.Versioning;
 using Eshop.Api.Dtos;
-using Eshop.Infrastructure.Persistence.Repositories.Abstractions;
+using Eshop.Infrastructure.Persistence.Abstractions;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Eshop.Api.Controllers.V1;

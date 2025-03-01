@@ -1,5 +1,5 @@
+using Eshop.Infrastructure.Persistence.Abstractions;
 using Eshop.Infrastructure.Persistence.Repositories;
-using Eshop.Infrastructure.Persistence.Repositories.Abstractions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

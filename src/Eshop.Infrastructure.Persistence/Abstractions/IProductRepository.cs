@@ -1,6 +1,6 @@
 using Eshop.Domain.Entities;
 
-namespace Eshop.Infrastructure.Persistence.Repositories.Abstractions;
+namespace Eshop.Infrastructure.Persistence.Abstractions;
 
 public interface IProductRepository
 {
