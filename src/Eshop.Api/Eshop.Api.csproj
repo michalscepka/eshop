@@ -13,6 +13,12 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Content Include="..\.dockerignore">
+        <Link>.dockerignore</Link>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
       <ProjectReference Include="..\Eshop.Infrastructure.Persistence\Eshop.Infrastructure.Persistence.csproj" />
     </ItemGroup>
 

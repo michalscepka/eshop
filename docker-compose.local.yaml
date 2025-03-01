@@ -1,0 +1,40 @@
+﻿name: eshop-development
+
+services:
+  eshop-api:
+    build:
+      context: .
+      dockerfile: Eshop.Api/Dockerfile
+    container_name: eshop-api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__Database=Server=eshop-db;Database=EshopDb;User Id=sa;Password=Password123;TrustServerCertificate=True;
+    ports:
+      - "5001:8080"
+    restart: unless-stopped
+    networks:
+      - eshop-network
+    depends_on:
+      - eshop-db
+  
+  eshop-db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: eshop-db
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=Password123
+    volumes:
+      - eshop_db_data:/var/opt/mssql
+    ports:
+      - "1433:1433"
+    restart: unless-stopped
+    networks:
+      - eshop-network
+
+networks:
+  eshop-network:
+    driver: bridge
+
+volumes:
+  eshop_db_data:
+    driver: local
