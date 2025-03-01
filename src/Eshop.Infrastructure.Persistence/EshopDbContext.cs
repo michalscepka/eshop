@@ -1,4 +1,5 @@
-﻿using Eshop.Infrastructure.Persistence.Models;
+﻿using Eshop.Infrastructure.Persistence.Extensions;
+using Eshop.Infrastructure.Persistence.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Eshop.Infrastructure.Persistence;
@@ -15,5 +16,6 @@ public class EshopDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(EshopDbContext).Assembly);
+        modelBuilder.SeedData();
     }
 }
