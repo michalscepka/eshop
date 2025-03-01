@@ -1,11 +1,13 @@
+using Asp.Versioning;
 using Eshop.Api.Dtos;
 using Eshop.Infrastructure.Persistence.Repositories.Abstractions;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Eshop.Api.Controllers;
+namespace Eshop.Api.Controllers.V1;
 
 [ApiController]
-[Route("api/product")]
+[Route("api/v{version:apiVersion}/product")]
+[ApiVersion(1.0)]
 public class ProductController : ControllerBase
 {
     private readonly IProductRepository _productRepository;
