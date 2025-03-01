@@ -5,6 +5,7 @@ namespace Eshop.Infrastructure.Persistence.Repositories.Abstractions;
 public interface IProductRepository
 {
     Task<IEnumerable<Product>> GetAllAsync();
+    Task<IEnumerable<Product>> GetAllPaginatedAsync(int pageNumber, int pageSize);
     Task<Product?> GetByIdAsync(Guid id);
     Task<bool> UpdateDescriptionAsync(Guid id, string description);
 }

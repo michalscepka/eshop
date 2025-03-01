@@ -1,4 +1,5 @@
 using Eshop.Domain.Entities;
+using Eshop.Infrastructure.Persistence.Extensions;
 using Eshop.Infrastructure.Persistence.Mappings;
 using Eshop.Infrastructure.Persistence.Repositories.Abstractions;
 using Microsoft.EntityFrameworkCore;
@@ -17,6 +18,15 @@ public class ProductRepository : IProductRepository
     public async Task<IEnumerable<Product>> GetAllAsync()
     {
         var productsModel = await _dbContext.Products.ToListAsync();
+        
+        return productsModel.Select(p => p.ToDomain());
+    }
+
+    public async Task<IEnumerable<Product>> GetAllPaginatedAsync(int pageNumber, int pageSize)
+    {
+        var productsModel = await _dbContext.Products
+            .Paginate(pageNumber, pageSize)
+            .ToListAsync();
         
         return productsModel.Select(p => p.ToDomain());
     }
