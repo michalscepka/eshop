@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Eshop.Infrastructure.Persistence.Extensions;
 
-public static class ModelBuilderExtensions
+internal static class ModelBuilderExtensions
 {
     public static void SeedData(this ModelBuilder modelBuilder)
     {

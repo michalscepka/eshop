@@ -1,6 +1,6 @@
 namespace Eshop.Api.Extensions;
 
-public static class WebApplicationExtensions
+internal static class WebApplicationExtensions
 {
     public static void AddSwagger(this WebApplication app)
     {

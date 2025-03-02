@@ -2,7 +2,7 @@ using Eshop.Domain.Entities;
 
 namespace Eshop.Infrastructure.Persistence.Mocking;
 
-public static class ProductMockData
+internal static class ProductMockData
 {
     public static List<Product> GetMockProducts()
     {

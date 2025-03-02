@@ -1,5 +1,5 @@
 using Eshop.Domain.Entities;
-using Eshop.Infrastructure.Persistence.Abstractions;
+using Eshop.Domain.Repositories;
 using Eshop.Infrastructure.Persistence.Extensions;
 using Eshop.Infrastructure.Persistence.Mappings;
 using Microsoft.EntityFrameworkCore;

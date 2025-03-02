@@ -3,7 +3,7 @@ using Microsoft.OpenApi.Models;
 
 namespace Eshop.Api.Extensions;
 
-public static class ServiceCollectionExtensions
+internal static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddVersioning(this IServiceCollection services)
     {

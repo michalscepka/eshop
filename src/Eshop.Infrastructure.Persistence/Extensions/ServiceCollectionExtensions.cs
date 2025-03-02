@@ -1,4 +1,4 @@
-using Eshop.Infrastructure.Persistence.Abstractions;
+using Eshop.Domain.Repositories;
 using Eshop.Infrastructure.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;

@@ -1,5 +1,5 @@
 using Eshop.Domain.Entities;
-using Eshop.Infrastructure.Persistence.Abstractions;
+using Eshop.Domain.Repositories;
 
 namespace Eshop.Infrastructure.Persistence.Mocking;
 

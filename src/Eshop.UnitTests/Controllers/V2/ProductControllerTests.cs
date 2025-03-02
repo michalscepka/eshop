@@ -1,7 +1,7 @@
 using Eshop.Api.Controllers.V2;
 using Eshop.Api.Dtos;
 using Eshop.Domain.Entities;
-using Eshop.Infrastructure.Persistence.Abstractions;
+using Eshop.Domain.Repositories;
 using Eshop.Infrastructure.Persistence.Mocking;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
