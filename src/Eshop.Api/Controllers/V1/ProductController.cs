@@ -1,5 +1,6 @@
 using Asp.Versioning;
 using Eshop.Api.Dtos;
+using Eshop.Api.Mappings;
 using Eshop.Infrastructure.Persistence.Abstractions;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,29 +19,31 @@ public class ProductController : ControllerBase
     }
     
     [HttpGet]
-    public async Task<IActionResult> GetAll()
+    public async Task<ActionResult<IEnumerable<ProductResponse>>> GetAll()
     {
         var products = await _productRepository.GetAllAsync();
-        return Ok(products);
+
+        var response = products.Select(p => p.ToResponse());
+        
+        return Ok(response);
     }
 
     [HttpGet("{id:guid}")]
-    public async Task<IActionResult> GetById([FromRoute] Guid id)
+    public async Task<ActionResult<ProductResponse>> GetById([FromRoute] Guid id)
     {
         var product = await _productRepository.GetByIdAsync(id);
         
         if (product is null)
             return NotFound($"Product {id} not found");
         
-        return Ok(product);
+        var response = product.ToResponse();
+        
+        return Ok(response);
     }
 
     [HttpPatch("{id:guid}/description")]
     public async Task<IActionResult> UpdateDescription([FromRoute] Guid id, [FromBody] UpdateProductDescriptionRequest updateRequest)
     {
-        if (string.IsNullOrWhiteSpace(updateRequest.Description))
-            return BadRequest("Description cannot be empty.");
-
         var isUpdated = await _productRepository.UpdateDescriptionAsync(id, updateRequest.Description);
 
         return isUpdated

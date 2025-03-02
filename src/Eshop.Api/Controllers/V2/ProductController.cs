@@ -1,4 +1,6 @@
 using Asp.Versioning;
+using Eshop.Api.Dtos;
+using Eshop.Api.Mappings;
 using Eshop.Infrastructure.Persistence.Abstractions;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,9 +19,15 @@ public class ProductController : ControllerBase
     }
     
     [HttpGet]
-    public async Task<IActionResult> GetAll([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
+    public async Task<ActionResult<ProductResponse>> GetAll([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
     {
+        if (pageNumber < 1 || pageSize < 1)
+            return BadRequest("Page number and page size must be greater than 0.");
+            
         var products = await _productRepository.GetAllPaginatedAsync(pageNumber, pageSize);
-        return Ok(products);
+
+        var response = products.Select(p => p.ToResponse());
+        
+        return Ok(response);
     }
 }
