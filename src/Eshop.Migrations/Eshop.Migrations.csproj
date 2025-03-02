@@ -27,6 +27,14 @@
       <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.2" />
       <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.2" />
       <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="9.0.2" />
+
+    <ItemGroup>
+      <None Update="appsettings.Development.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="appsettings.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>

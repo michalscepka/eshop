@@ -9,18 +9,9 @@ var builder = Host.CreateDefaultBuilder(args);
 builder.ConfigureAppConfiguration(config =>
 {
     var environmentName = Environment.GetEnvironmentVariable("DOTNET_ENVIRONMENT");
-
-    var currentDir = new DirectoryInfo(AppContext.BaseDirectory);
-    while (currentDir != null && currentDir.GetFiles("*.sln").Length == 0)
-        currentDir = currentDir.Parent;
-
-    var basePath = currentDir != null
-        ? Path.Combine(currentDir.FullName, "Eshop.Api")
-        : throw new DirectoryNotFoundException("Could not locate Eshop.Api folder");
     
-    config.SetBasePath(basePath)
-        .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-        .AddJsonFile($"appsettings.{environmentName}.json", optional: true, reloadOnChange: true);
+    config.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+    config.AddJsonFile($"appsettings.{environmentName}.json", optional: true, reloadOnChange: true);
 });
 builder.ConfigureServices((hostBuilder, services) =>
 {
